@@ -12,9 +12,37 @@ from . import filters
 
 class ProfileTypeViewSet(viewsets.ModelViewSet):
     """
-    ProfileType helps grouping SiteProfiles together. For example, a
-    ProfileType called 'billing' can be created to classify all billing
-    addresses stored.
+
+    retrieve:
+    Retrieves a ProfileType by its ID.
+
+    Retrieves a ProfileType by its ID.
+
+    list:
+    Retrieves a list of ProfileTypes.
+
+    Retrieves a list of ProfileTypes.
+
+    create:
+    Creates a new ProfileType.
+
+    Creates a new ProfileType.
+
+    update:
+    Updates the ProfileType with the given ID (all fields).
+
+    Updates the ProfileType with the given ID (all fields).
+
+    partial_update:
+    Updates the ProfileType with the given ID (only specified fields).
+
+    Updates the ProfileType with the given ID (only specified fields).
+
+    destroy:
+    Deletes the ProfileType with the given ID.
+
+    Deletes the ProfileType with the given ID.
+
     """
     def get_queryset(self):
         queryset = super().get_queryset()
@@ -46,13 +74,37 @@ class ProfileTypeViewSet(viewsets.ModelViewSet):
 
 class SiteProfileViewSet(viewsets.ModelViewSet):
     """
-    SiteProfile can be used to store any international address thanks to the
-    flexible schema provided.
 
-    For listing objects, there is a `profiletype__id` filter to be used in
-    the querystring.
+    retrieve:
+    Retrieves a SiteProfile by its UUID.
 
-    The `country` field is a two-char ISO code.
+    Retrieves a SiteProfile by its UUID.
+
+    list:
+    Retrieves a list of SiteProfiles.
+
+    Retrieves a list of SiteProfiles.
+
+    create:
+    Creates a new SiteProfile.
+
+    Creates a new SiteProfile.
+
+    partial_update:
+    Updates the SiteProfile with the given UUID (only specified fields).
+
+    Updates the SiteProfile with the given UUID (only specified fields).
+
+    update:
+    Updates the SiteProfile with the given UUID (all fields).
+
+    Updates the SiteProfile with the given UUID (all fields).
+
+    destroy:
+    Deletes the SiteProfile with the given UUID.
+
+    Deletes the SiteProfile with the given UUID.
+
     """
     def get_queryset(self):
         queryset = super().get_queryset()
